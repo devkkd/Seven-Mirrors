@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -5,17 +8,18 @@ import Link from "next/link";
 
 const COMPANY = [
   { label: "Properties", href: "/properties" },
-  { label: "Destinations", href: "/destinations" },
+  // { label: "Destinations", href: "/destinations" },
   { label: "About Us", href: "/our-story" },
   { label: "Add Your Property", href: "/add-your-property" },
-  { label: "Contact Us", href: "/contact" },
+  { label: "Blogs", href: "/blogs" },
+  { label: "Contact Us", href: "/contact-us" },
 ];
 
 const POLICY = [
-  { label: "Terms of Service", href: "/terms" },
+  { label: "Terms of Service", href: "/terms-of-service" },
   { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Payments Terms", href: "/payment-terms" },
-  { label: "Cancellation / Refund Policy", href: "/cancellation-policy" },
+  { label: "Cancellation / Refund Policy", href: "/cancellation-refund-policy" },
 ];
 
 const EXPLORE = [
@@ -98,7 +102,13 @@ const SOCIALS = [
 /* ---------------- footer ---------------- */
 
 export default function Footer() {
-  const year = new Date().getFullYear();
+  // new Date() render ke time par nahi chalta (Next.js prerender error se bachne ke liye).
+  // Pehle fixed saal dikhta hai, browser me load hote hi sahi saal set ho jata hai.
+  const [year, setYear] = useState(2026);
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
 
   return (
     <footer className="bg-[#1e1e1e] text-white">
@@ -222,7 +232,7 @@ export default function Footer() {
           </div>
 
           <p className="order-3 text-[12px] font-light text-white/90 lg:order-none lg:text-right lg:text-[13px]">
-            Design &amp; build by Kontent Kraft Digital
+            Design &amp; Build by <Link href='https://www.kontentkraftdigital.com/' target="_blank" rel="noopener noreferrer" className="text-white"> Kontent Kraft Digital </Link>
           </p>
         </div>
       </div>
