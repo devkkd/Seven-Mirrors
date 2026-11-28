@@ -1,0 +1,194 @@
+@reference "../../app/globals.css";
+
+/* Key Features & Amenities Section CSS */
+
+.key-features-section {
+  @apply w-full bg-[#ffffff] pt-[24px] pb-[40px] border-b border-[#e5e7eb] scroll-mt-[24px];
+}
+
+/* Section Heading - Consistent with The Space */
+.key-features-heading {
+  @apply font-sans font-semibold not-italic leading-[160%] tracking-[-0.03em] text-[#141414] m-0 mb-[22px];
+  font-size: 35px;
+}
+
+/* Two-Column Grid */
+.key-features-grid {
+  @apply grid gap-[40px] items-start;
+  grid-template-columns: 220px minmax(0, 1fr);
+}
+
+/* Left Column: Categories & Icons */
+.amenities-left-col {
+  @apply flex flex-col;
+}
+
+.amenity-category-block {
+  @apply flex flex-col;
+}
+
+.amenity-category-spaced {
+  @apply mt-[28px];
+}
+
+.amenity-category-title {
+  @apply font-sans font-bold text-[#141414] m-0 mb-[14px];
+  font-size: 13.5px;
+}
+
+.amenity-items-list {
+  @apply list-none m-0 p-0 flex flex-col gap-[12px];
+}
+
+.amenity-item-row {
+  @apply flex items-center gap-[10px];
+}
+
+.amenity-item-icon {
+  @apply w-[18px] h-[18px] object-contain shrink-0 block;
+}
+
+.amenity-item-label {
+  @apply font-sans font-normal text-[#262626] leading-[1.4];
+  font-size: 12px;
+}
+
+/* Right Column: Detailed Information */
+.amenities-right-col {
+  @apply flex flex-col gap-[16px];
+}
+
+.amenity-detail-block {
+  @apply flex flex-col gap-[3px];
+}
+
+.amenity-detail-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 0;
+  text-align: left;
+  cursor: default;
+  pointer-events: none;
+}
+
+.amenity-detail-chevron {
+  display: none;
+}
+
+.amenity-detail-lines {
+  flex-direction: column;
+  gap: 3px;
+}
+
+.amenity-detail-heading {
+  @apply font-sans font-bold text-[#141414] m-0 leading-[1.4];
+  font-size: 12.5px;
+}
+
+.amenity-detail-text {
+  @apply font-sans font-normal text-[#374151] m-0 leading-[1.55];
+  font-size: 12px;
+}
+
+.amenity-closing-line {
+  @apply font-sans font-normal text-[#374151] m-0 mt-[4px] leading-[1.55];
+  font-size: 12px;
+}
+
+/* Tablet Responsive */
+@media (max-width: 1024px) {
+  .key-features-heading {
+    font-size: 29px;
+  }
+
+  .key-features-grid {
+    @apply gap-[28px];
+    grid-template-columns: 195px minmax(0, 1fr);
+  }
+
+  .amenity-detail-toggle {
+    cursor: pointer;
+    pointer-events: auto;
+    padding: 6px 0;
+  }
+
+  .amenity-detail-chevron {
+    display: block;
+    width: 16px;
+    height: 16px;
+    color: #141414;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+
+  .amenity-detail-chevron.is-open {
+    transform: rotate(180deg);
+  }
+
+  .amenity-detail-lines {
+    display: none;
+  }
+
+  .amenity-detail-lines.is-open {
+    display: flex;
+    padding-bottom: 6px;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+  .key-features-heading {
+    font-size: 23px;
+    line-height: 135%;
+    margin-bottom: 18px;
+  }
+
+  .key-features-grid {
+    @apply grid-cols-1 gap-[28px];
+  }
+
+  .amenity-items-list {
+    @apply grid grid-cols-2 gap-x-[12px] gap-y-[12px];
+  }
+
+  .amenity-category-spaced {
+    @apply mt-[22px];
+  }
+
+  .amenity-detail-block {
+    border-bottom: 1px solid #ece8df;
+    padding-bottom: 6px;
+  }
+
+  .amenity-detail-toggle {
+    cursor: pointer;
+    pointer-events: auto;
+    padding: 6px 0;
+  }
+
+  .amenity-detail-chevron {
+    display: block;
+    width: 16px;
+    height: 16px;
+    color: #141414;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+
+  .amenity-detail-chevron.is-open {
+    transform: rotate(180deg);
+  }
+
+  .amenity-detail-lines {
+    display: none;
+  }
+
+  .amenity-detail-lines.is-open {
+    display: flex;
+    padding-bottom: 6px;
+  }
+}

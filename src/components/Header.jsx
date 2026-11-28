@@ -46,6 +46,15 @@ export default function Header() {
     };
   }, [open]);
 
+  if (
+    pathname?.startsWith("/confirm-and-pay") ||
+    pathname?.startsWith("/create-account") ||
+    pathname?.startsWith("/login") ||
+    pathname?.startsWith("/booking-success")
+  ) {
+    return null;
+  }
+
   return (
     <header className="relative z-50 w-full px-4 pt-3">
       <div className="mx-auto grid h-[68px] max-w-[1400px] grid-cols-[1fr_auto_1fr] items-center rounded-2xl bg-white px-6">

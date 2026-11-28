@@ -1,0 +1,82 @@
+@reference "../../app/globals.css";
+
+/* Contact Banner CSS */
+
+.contact-banner-section {
+  @apply w-full mt-[8px] mb-[28px];
+}
+
+.contact-banner-box {
+  @apply bg-[#0e0e0e] rounded-[20px] py-[22px] px-[28px] flex justify-between items-center gap-[20px];
+}
+
+.contact-banner-left {
+  @apply border-l border-white/25 pl-[18px];
+}
+
+.contact-banner-heading {
+  @apply font-sans text-[14px] font-semibold text-[#ffffff] mb-[4px] mt-0;
+}
+
+.contact-banner-subtext {
+  @apply font-sans text-[11.5px] text-[#d1d5db] m-0 leading-[1.45];
+}
+
+.contact-callback-btn {
+  @apply inline-flex items-center gap-[8px] bg-[#ffffff] text-[#141414] border-none rounded-full py-[12px] px-[22px] font-sans text-[12px] font-medium cursor-pointer whitespace-nowrap shrink-0 transition-all duration-200 hover:opacity-[0.92] hover:-translate-y-[1px];
+}
+
+.callback-phone-icon {
+  @apply w-[17px] h-[17px] object-contain inline-block;
+}
+
+/* Modal */
+.callback-modal-backdrop {
+  @apply fixed inset-0 bg-black/55 flex items-center justify-center z-[2000] p-[16px];
+}
+
+.callback-modal-card {
+  @apply bg-[#ffffff] rounded-[16px] p-[24px] max-w-[400px] w-full;
+}
+
+.callback-modal-card h4 {
+  @apply mt-0 mb-[8px] text-[16px] text-[#141414];
+}
+
+.callback-modal-card p {
+  @apply text-[12px] text-[#4b5563] mt-0 mb-[16px];
+}
+
+.callback-phone-input {
+  @apply w-full border border-[#d1d5db] rounded-[10px] py-[10px] px-[14px] text-[13px] mb-[16px] outline-none;
+}
+
+.callback-modal-actions {
+  @apply flex justify-end gap-[10px];
+}
+
+.callback-cancel-btn {
+  @apply bg-[#f3f4f6] text-[#374151] border-none py-[9px] px-[18px] rounded-full cursor-pointer font-medium;
+}
+
+.callback-submit-btn {
+  @apply bg-[#141414] text-[#ffffff] border-none py-[9px] px-[18px] rounded-full cursor-pointer font-medium;
+}
+
+.callback-success-state {
+  @apply text-center;
+}
+
+.callback-success-icon {
+  @apply w-[44px] h-[44px] bg-[#dcfce7] text-[#16a34a] rounded-full flex items-center justify-center text-[20px] font-bold mx-auto mb-[12px];
+}
+
+@media (max-width: 640px) {
+  .contact-banner-box {
+    @apply flex-col items-start p-[20px];
+  }
+
+  .contact-callback-btn {
+    @apply w-full justify-center;
+  }
+}

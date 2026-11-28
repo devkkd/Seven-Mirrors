@@ -1,0 +1,190 @@
+@reference "../../app/globals.css";
+
+/* Booking Card CSS - Sticky Right Column */
+
+.booking-card {
+  @apply sticky top-[24px] self-start w-full bg-[#faf8f3] border border-[#eeeae1] rounded-[20px] p-[24px] font-sans;
+}
+
+.booking-card-header {
+  @apply mb-[20px];
+}
+
+.booking-price-row {
+  @apply flex items-baseline gap-[6px];
+}
+
+.booking-price-main {
+  @apply text-[26px] font-bold text-[#141414] tracking-[-0.02em];
+}
+
+.booking-price-sub {
+  @apply text-[12px] text-[#6b7280];
+}
+
+.booking-total-line {
+  @apply text-[12px] font-medium text-[#374151] mt-[2px];
+}
+
+/* Form Elements */
+.booking-card-form {
+  @apply flex flex-col gap-[12px];
+}
+
+.booking-dates-box {
+  @apply grid grid-cols-[1fr_auto_1fr] items-center bg-[#ffffff] border border-[#e5e2da] rounded-[14px] py-[12px] px-[16px] gap-[8px];
+}
+
+.booking-date-col {
+  @apply relative flex flex-col;
+}
+
+.booking-field-label {
+  @apply text-[10px] font-medium text-[#6b7280] mb-[2px];
+}
+
+.booking-date-input {
+  @apply w-full border-none outline-none bg-transparent text-[12px] font-semibold text-[#141414] font-[inherit] cursor-pointer;
+}
+
+.booking-date-input::-webkit-calendar-picker-indicator {
+  @apply opacity-50 cursor-pointer;
+}
+
+.date-placeholder-text {
+  @apply hidden;
+}
+
+.date-arrow-separator {
+  @apply text-[#6b7280] text-[12px] px-[4px];
+}
+
+/* Guests Selector Box */
+.booking-guests-box {
+  @apply relative bg-[#ffffff] border border-[#e5e2da] rounded-[14px] py-[12px] px-[16px];
+}
+
+.guests-box-trigger {
+  @apply flex justify-between items-center cursor-pointer;
+}
+
+.guests-selected-value {
+  @apply text-[12px] font-semibold text-[#141414];
+}
+
+.guests-chevron {
+  @apply w-[16px] h-[16px] text-[#4b5563] transition-transform duration-200;
+}
+
+.guests-chevron.rotated {
+  @apply rotate-180;
+}
+
+.guests-popover-panel {
+  @apply absolute top-[calc(100%+8px)] left-0 right-0 bg-[#ffffff] border border-[#e5e2da] rounded-[12px] p-[16px] z-40 flex flex-col gap-[12px];
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.guests-counter-item {
+  @apply flex justify-between items-center;
+}
+
+.counter-label {
+  @apply text-[12px] font-medium text-[#141414];
+}
+
+.counter-btn-group {
+  @apply flex items-center gap-[12px];
+}
+
+.counter-btn-group button {
+  @apply w-[28px] h-[28px] rounded-full border border-[#d1d5db] bg-[#ffffff] cursor-pointer text-[14px] flex items-center justify-center;
+}
+
+.guests-done-btn {
+  @apply self-end bg-[#141414] text-[#ffffff] border-none py-[6px] px-[14px] rounded-[8px] text-[11px] font-semibold cursor-pointer;
+}
+
+/* Reserve Now Button */
+.booking-submit-btn {
+  @apply w-full bg-[#161616] text-[#ffffff] border-none rounded-full py-[14px] px-[20px] cursor-pointer mt-[4px] transition-colors duration-200 hover:bg-[#000000];
+  font-family: var(--font-mona), "Mona Sans", system-ui, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 160%;
+  letter-spacing: -0.02em;
+}
+
+.booking-footer-note {
+  @apply text-center text-[10px] text-[#6b7280] mt-[4px];
+}
+
+/* Modal */
+.booking-confirm-backdrop {
+  @apply fixed inset-0 bg-black/55 flex items-center justify-center z-[2000] p-[16px];
+}
+
+.booking-confirm-modal {
+  @apply bg-[#ffffff] rounded-[16px] p-[24px] max-w-[400px] w-full text-center;
+}
+
+.confirm-details {
+  @apply bg-[#faf8f3] rounded-[10px] p-[14px] my-[16px] text-left text-[14px] flex flex-col gap-[6px];
+}
+
+.confirm-close-btn {
+  @apply bg-[#141414] text-[#ffffff] border-none py-[10px] px-[24px] rounded-full font-semibold cursor-pointer;
+}
+
+/* Responsive: Tablet & Mobile */
+@media (max-width: 900px) {
+  .booking-card {
+    @apply static top-auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .booking-card {
+    @apply p-[18px] rounded-[16px];
+  }
+
+  .booking-card-header {
+    @apply mb-[16px];
+  }
+
+  .booking-price-main {
+    @apply text-[22px];
+  }
+
+  .booking-dates-box {
+    @apply py-[10px] px-[12px] gap-[6px];
+  }
+
+  .booking-date-col {
+    @apply min-w-0;
+  }
+
+  .booking-date-input {
+    @apply min-w-0 text-[11.5px];
+  }
+
+  .booking-guests-box {
+    @apply py-[10px] px-[12px];
+  }
+
+  .booking-submit-btn {
+    @apply py-[12px] px-[16px];
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .booking-dates-box {
+    @apply grid-cols-1 gap-[10px];
+  }
+
+  .date-arrow-separator {
+    @apply hidden;
+  }
+}

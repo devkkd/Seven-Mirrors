@@ -1,0 +1,187 @@
+@reference "../../app/globals.css";
+
+/* The Space Section CSS */
+
+.the-space-section {
+  @apply w-full bg-[#ffffff] pt-[12px] pb-[36px] border-b border-[#e5e7eb] scroll-mt-[24px];
+}
+
+/* Section Heading (-5px: 40px -> 35px) */
+.the-space-heading {
+  @apply font-sans font-semibold not-italic leading-[160%] tracking-[-0.03em] text-[#141414] m-0 mb-[12px];
+  font-size: 35px;
+}
+
+/* Description (-5px: 18px -> 13px) */
+.the-space-description {
+  @apply font-sans font-normal not-italic leading-[160%] tracking-[-0.02em] text-[#262626] flex flex-col gap-[4px] mb-[28px];
+  font-size: 13px;
+}
+
+.the-space-description p {
+  @apply m-0;
+}
+
+.the-space-read-more-btn {
+  display: none;
+}
+
+/* Accommodation Capacity (-5px: 24px -> 19px, bullets 18px -> 13px) */
+.accommodation-capacity-block {
+  @apply mb-[32px];
+}
+
+.capacity-heading {
+  @apply font-sans font-bold not-italic leading-[160%] tracking-[-0.02em] text-[#141414] m-0 mb-[10px];
+  font-size: 19px;
+}
+
+.capacity-bullets-list {
+  @apply list-none m-0 p-0 flex flex-col gap-[4px] font-sans font-normal not-italic leading-[160%] tracking-[-0.02em] text-[#262626];
+  font-size: 13px;
+}
+
+/* Horizontal Scroll Carousel - 3 full cards + 4th card half visible on all desktop widths */
+.accommodation-carousel-wrapper {
+  @apply w-full;
+}
+
+.accommodation-cards-track {
+  @apply flex flex-row flex-nowrap gap-[16px] overflow-x-auto scroll-smooth pb-[8px] [scrollbar-width:none] [-webkit-overflow-scrolling:touch];
+}
+
+.accommodation-cards-track::-webkit-scrollbar {
+  @apply hidden;
+}
+
+.accommodation-card-item {
+  @apply shrink-0 flex flex-col;
+  flex: 0 0 calc((100% - 48px) / 3.5);
+}
+
+/* Proportional 5:4 image */
+.accommodation-img-wrap {
+  @apply w-full rounded-[18px] overflow-hidden mb-[12px] bg-[#f5f5f5];
+  aspect-ratio: 300 / 240;
+}
+
+.accommodation-card-img {
+  @apply w-full h-full object-cover block opacity-100;
+}
+
+.accommodation-card-title {
+  @apply font-sans font-bold tracking-[0.02em] text-[#141414] uppercase m-0 mb-[5px];
+  font-size: 11px;
+}
+
+.accommodation-card-points {
+  @apply flex flex-col gap-[3px];
+}
+
+.accommodation-point-line {
+  @apply font-sans font-normal leading-[1.45] text-[#374151] m-0;
+  font-size: 11px;
+}
+
+/* Bottom Slider Arrows & Progress Track */
+.accommodation-slider-controls {
+  @apply flex items-center gap-[14px] mt-[24px];
+}
+
+.slider-arrow-btn {
+  @apply bg-transparent border-none p-[4px] cursor-pointer text-[#141414] inline-flex items-center justify-center transition-opacity duration-200 hover:opacity-65;
+}
+
+.slider-arrow-btn svg {
+  @apply w-[20px] h-[20px];
+}
+
+.slider-progress-track {
+  @apply w-[180px] h-[2px] bg-[#e5e2da] rounded-full overflow-hidden relative;
+}
+
+.slider-progress-thumb {
+  @apply h-full bg-[#141414] rounded-full transition-transform duration-200;
+}
+
+/* Tablet Responsive */
+@media (max-width: 1024px) {
+  .the-space-heading {
+    font-size: 29px;
+  }
+
+  .capacity-heading {
+    font-size: 17px;
+  }
+
+  .the-space-description,
+  .capacity-bullets-list {
+    font-size: 12px;
+  }
+
+  .accommodation-card-item {
+    flex: 0 0 calc((100% - 32px) / 2.5);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 640px) {
+  .the-space-heading {
+    font-size: 23px;
+    line-height: 135%;
+  }
+
+  .capacity-heading {
+    font-size: 15px;
+  }
+
+  .the-space-description,
+  .capacity-bullets-list {
+    font-size: 12px;
+  }
+
+  .the-space-description {
+    margin-bottom: 6px;
+    transition: all 0.3s ease;
+  }
+
+  .the-space-description.is-collapsed p:not(:first-child) {
+    display: none;
+  }
+
+  .the-space-description.is-collapsed p:first-child {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .the-space-read-more-btn {
+    display: inline-block;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #141414;
+    padding: 0 0 2px 0;
+    font-family: var(--font-mona-sans), 'Mona Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #141414;
+    cursor: pointer;
+    margin-bottom: 24px;
+  }
+
+  .accommodation-card-item {
+    flex: 0 0 210px;
+  }
+
+  .accommodation-slider-controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .slider-progress-track {
+    flex: 1;
+    width: 100%;
+    max-width: none;
+  }
+}

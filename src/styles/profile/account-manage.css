@@ -1,0 +1,135 @@
+@reference "../../app/globals.css";
+
+/* Profile -> Account Manage Page */
+
+.account-manage-container {
+  @apply w-full flex flex-col gap-[18px];
+}
+
+.preference-card,
+.disable-account-card,
+.delete-account-card {
+  @apply w-full bg-[#ffffff] border border-[#ece8df] rounded-[20px] px-[26px] py-[22px];
+}
+
+.preference-row {
+  @apply flex items-center justify-between gap-[20px];
+}
+
+.preference-content {
+  @apply min-w-0 flex flex-col;
+}
+
+.preference-title {
+  @apply m-0 mb-[6px] text-[13.5px] font-bold text-[#141414] leading-[1.3];
+}
+
+.preference-subtitle {
+  @apply m-0 mb-[4px] text-[10.5px] font-bold text-[#141414] leading-[1.35];
+}
+
+.preference-description {
+  @apply m-0 text-[10.5px] font-normal text-[#525252] leading-[1.5];
+}
+
+.preference-divider {
+  @apply w-full h-[1px] bg-[#f0ece3] my-[18px];
+}
+
+/* Toggle Switch */
+.toggle-switch {
+  @apply relative inline-flex items-center w-[42px] h-[22px] rounded-full border-none p-[2px] cursor-pointer transition-colors duration-200 shrink-0 bg-[#d1d5db];
+}
+
+.toggle-switch.is-on {
+  @apply bg-[#2ac74c];
+}
+
+.toggle-switch-knob {
+  @apply w-[18px] h-[18px] rounded-full bg-[#ffffff] block transition-transform duration-200;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+  transform: translateX(0);
+}
+
+.toggle-switch.is-on .toggle-switch-knob {
+  transform: translateX(20px);
+}
+
+/* Permanently Delete Account Card */
+.delete-account-lines {
+  @apply flex flex-col gap-[2px] mb-[18px];
+}
+
+.delete-account-button {
+  @apply inline-flex items-center justify-center bg-[#ff3b3b] text-[#ffffff] border-none rounded-full py-[11px] px-[24px] text-[11px] font-medium cursor-pointer transition-colors duration-150 hover:bg-[#e52e2e] whitespace-nowrap;
+}
+
+/* Delete Account Confirmation Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  background-color: rgba(0, 0, 0, 0.16);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.modal-wrapper {
+  @apply w-full max-w-[345px] flex flex-col items-center;
+}
+
+.modal-close-button {
+  @apply w-[34px] h-[34px] rounded-full bg-[#ffffff] border-none text-[#141414] flex items-center justify-center cursor-pointer mb-[12px] transition-transform duration-150 hover:scale-105;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.14);
+}
+
+.delete-modal {
+  @apply w-full bg-[#ffffff] rounded-[20px] px-[28px] pt-[36px] pb-[35px] text-center flex flex-col items-center;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.16);
+}
+
+.modal-title {
+  @apply m-0 mb-[12px] text-[17px] font-bold text-[#141414] leading-[1.3];
+}
+
+.modal-description {
+  @apply m-0 mb-[24px] max-w-[300px] text-[10.5px] font-normal text-[#525252] leading-[1.5];
+}
+
+.modal-confirm-button {
+  @apply inline-flex items-center justify-center bg-[#ff3b3b] text-[#ffffff] border-none rounded-full py-[11px] px-[26px] text-[11px] font-medium cursor-pointer transition-colors duration-150 hover:bg-[#e52e2e] whitespace-nowrap;
+}
+
+/* Tablet Responsive */
+@media (max-width: 960px) {
+  .preference-card,
+  .disable-account-card,
+  .delete-account-card {
+    @apply px-[22px] py-[20px];
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 640px) {
+  .preference-card,
+  .disable-account-card,
+  .delete-account-card {
+    @apply p-[18px] rounded-[16px];
+  }
+
+  .preference-row {
+    @apply items-start gap-[14px];
+  }
+
+  .delete-modal {
+    @apply px-[22px] py-[28px] rounded-[16px];
+  }
+
+  .modal-title {
+    @apply text-[16px];
+  }
+}

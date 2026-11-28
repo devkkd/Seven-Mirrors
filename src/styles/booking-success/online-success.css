@@ -1,0 +1,144 @@
+@reference "../../app/globals.css";
+
+/* Online Booking Success Page */
+
+.online-success-shell {
+  @apply w-full min-h-screen bg-[#ffffff] text-[#141414] overflow-x-hidden;
+  font-family: var(--font-mona), "Mona Sans",Mona;
+}
+
+/* White Header with Centered Logo & Thin Bottom Border */
+.online-success-header {
+  @apply w-full bg-[#ffffff] border-b border-[#e5e7eb] py-[16px] px-[24px] flex items-center justify-center;
+}
+
+.online-success-logo-link {
+  @apply inline-flex items-center justify-center;
+}
+
+.online-success-logo-img {
+  @apply h-[42px] w-auto object-contain block;
+}
+
+/* Main Centered Area */
+.online-success-main {
+  @apply w-full px-[16px] pt-[36px] pb-[64px] flex justify-center;
+}
+
+/* Success Card */
+.online-success-card {
+  @apply w-full max-w-[395px] bg-[#ffffff] border border-[#eeeae1] rounded-[20px] overflow-hidden flex flex-col;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.03);
+}
+
+/* Section 1: Heading */
+.online-success-top {
+  @apply pt-[28px] px-[24px] pb-[24px] text-center bg-[#ffffff];
+}
+
+.online-success-heading {
+  @apply m-0 mb-[8px] font-bold text-[#141414] text-[17px] leading-[1.3] tracking-[-0.01em];
+}
+
+.online-success-subtext {
+  @apply m-0 text-[10px] text-[#525252] leading-[1.5];
+}
+
+/* Section 2: Green Success Banner */
+.online-success-banner {
+  @apply w-full bg-[#2ac74c] py-[24px] px-[24px] flex flex-col items-center justify-center gap-[10px] text-center;
+}
+
+.online-success-check-circle {
+  @apply w-[46px] h-[46px] rounded-full bg-white/30 flex items-center justify-center;
+}
+
+.online-success-check-icon {
+  @apply w-[20px] h-[16px] object-contain block;
+}
+
+.online-success-booking-id {
+  @apply m-0 text-[#ffffff] font-bold text-[12px] tracking-[0.01em];
+}
+
+.online-success-banner-note {
+  @apply m-0 text-[9.5px] text-white/95 leading-[1.45] max-w-[270px];
+}
+
+/* Section 3: Your Stay */
+.online-success-stay-section {
+  @apply py-[22px] px-[24px] border-b border-[#f0ece3] bg-[#ffffff];
+}
+
+.online-success-stay-heading {
+  @apply m-0 mb-[16px] text-center font-bold text-[#141414] text-[13px];
+}
+
+.online-success-stay-grid {
+  @apply max-w-[260px] mx-auto flex flex-col gap-[8px];
+}
+
+.online-success-stay-row {
+  @apply grid grid-cols-[90px_1fr] items-center gap-[12px] text-[10.5px];
+}
+
+.online-success-stay-label {
+  @apply text-[#525252] font-normal;
+}
+
+.online-success-stay-value {
+  @apply text-[#141414] font-bold;
+}
+
+/* Section 4: Arrival & Welcome Message */
+.online-success-welcome {
+  @apply pt-[20px] px-[26px] pb-[22px] text-center bg-[#ffffff];
+}
+
+.online-success-welcome-text {
+  @apply m-0 text-[9.5px] text-[#525252] leading-[1.5];
+}
+
+/* Section 5: Action Buttons */
+.online-success-actions {
+  @apply px-[24px] pb-[28px] flex flex-col items-center gap-[16px] bg-[#ffffff];
+}
+
+.online-success-view-btn {
+  @apply inline-flex items-center justify-center bg-[#1a1a1a] text-[#ffffff] border-none rounded-full py-[12px] px-[32px] text-[12px] font-semibold cursor-pointer no-underline transition-colors duration-200 hover:bg-[#000000];
+}
+
+.online-success-home-link {
+  @apply inline-flex items-center justify-center text-[11px] font-bold text-[#141414] no-underline hover:underline;
+}
+
+/* Mobile Responsive */
+@media (max-width: 640px) {
+  .online-success-header {
+    @apply py-[14px] px-[16px];
+  }
+
+  .online-success-logo-img {
+    @apply h-[36px];
+  }
+
+  .online-success-main {
+    @apply px-[14px] pt-[24px] pb-[48px];
+  }
+
+  .online-success-card {
+    @apply max-w-[360px] rounded-[18px];
+  }
+
+  .online-success-top {
+    @apply pt-[24px] px-[18px] pb-[20px];
+  }
+
+  .online-success-heading {
+    @apply text-[16px];
+  }
+
+  .online-success-stay-section {
+    @apply py-[18px] px-[18px];
+  }
+}

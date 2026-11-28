@@ -1,0 +1,40 @@
+@reference "../../app/globals.css";
+
+/* Property Navigation Tabs CSS - Section 2 */
+
+.property-nav-container {
+  @apply w-full max-w-[1320px] mx-auto px-[16px] bg-[#ffffff];
+}
+
+.property-nav-list {
+  @apply flex items-center flex-row list-none m-0 pt-[12px] pb-[20px] px-0 gap-[28px] overflow-x-auto [scrollbar-width:none] [-webkit-overflow-scrolling:touch];
+}
+
+.property-nav-list::-webkit-scrollbar {
+  @apply hidden;
+}
+
+.property-nav-item {
+  @apply inline-flex items-center shrink-0;
+}
+
+/* Individual Navigation Item - Exact Figma Typography */
+.property-nav-btn {
+  @apply bg-transparent border-none p-0 h-[38px] inline-flex items-center justify-start cursor-pointer whitespace-nowrap no-underline font-sans font-[350] not-italic text-[20px] leading-[160%] tracking-[-0.02em] text-[#717171] opacity-100 transition-colors duration-200 hover:text-[#111827];
+}
+
+/* Active navigation item styling */
+.property-nav-btn.is-active {
+  @apply text-[#111827] font-normal;
+}
+
+@media (max-width: 640px) {
+  .property-nav-list {
+    @apply gap-[16px] pt-[8px] pb-[14px] px-0;
+  }
+
+  .property-nav-btn {
+    font-size: 16px;
+    height: 32px;
+  }
+}

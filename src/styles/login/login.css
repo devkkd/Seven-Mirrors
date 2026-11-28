@@ -1,0 +1,192 @@
+@reference "../../app/globals.css";
+
+/* Standalone Login Page (matching /create-account structure) */
+
+.login-page-shell {
+  @apply w-full min-h-screen bg-[#ffffff] text-[#141414] overflow-x-hidden;
+  font-family: var(--font-mona), "Mona Sans", system-ui, sans-serif;
+}
+
+.login-page-header {
+  @apply w-full bg-[#ffffff] border-b border-[#e5e7eb] py-[16px] px-[24px] flex items-center justify-center;
+}
+
+.login-page-logo-link {
+  @apply inline-flex items-center justify-center;
+}
+
+.login-page-logo-img {
+  @apply h-[42px] w-auto object-contain block;
+}
+
+.login-page-main {
+  @apply w-full px-[16px] pt-[36px] pb-[64px] flex justify-center;
+}
+
+.login-page-wrapper {
+  @apply relative w-full max-w-[355px] flex flex-col items-center;
+}
+
+.login-page-card {
+  @apply w-full min-h-[455px] flex flex-col bg-[#ffffff] rounded-[20px] overflow-hidden border border-[#eeeae1];
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.04);
+}
+
+.login-page-card-header {
+  @apply w-full bg-[#1c1c1c] pt-[26px] px-[20px] pb-[22px] flex items-center justify-center shrink-0;
+}
+
+.login-page-card-logo {
+  @apply h-[38px] w-auto object-contain block;
+  filter: brightness(0) invert(1);
+}
+
+.login-page-card-body {
+  @apply flex-1 pt-[28px] px-[24px] pb-[40px] bg-[#ffffff] flex flex-col justify-between;
+}
+
+.login-page-title {
+  @apply m-0 mb-[18px] text-center text-[13px] font-bold text-[#141414] leading-[1.3];
+}
+
+.login-page-tabs {
+  @apply flex items-center gap-[8px] mb-[16px];
+}
+
+.login-page-tab {
+  @apply bg-[#ffffff] text-[#141414] border border-[#e5e7eb] rounded-full py-[5px] px-[13px] text-[9px] font-medium cursor-pointer transition-all duration-150;
+}
+
+.login-page-tab.is-active {
+  @apply bg-[#1a1a1a] text-[#ffffff] border-[#1a1a1a] font-semibold;
+}
+
+.login-page-form {
+  @apply flex flex-col;
+}
+
+.login-field-block {
+  @apply flex flex-col;
+}
+
+.login-field-label {
+  @apply text-[8.5px] font-semibold text-[#141414] mb-[6px];
+}
+
+.login-phone-box {
+  @apply flex items-center w-full h-[38px] border border-[#e5e7eb] rounded-[10px] bg-[#ffffff] overflow-hidden;
+}
+
+.login-country-wrap {
+  @apply relative flex items-center h-full border-r border-[#e5e7eb] pl-[12px] pr-[10px] shrink-0;
+}
+
+.login-country-select {
+  @apply appearance-none bg-transparent border-none outline-none text-[9px] font-medium text-[#141414] pr-[14px] cursor-pointer;
+}
+
+.login-country-chevron {
+  @apply absolute right-[8px] pointer-events-none text-[#525252];
+}
+
+.login-phone-input {
+  @apply flex-1 min-w-0 h-full border-none outline-none bg-transparent px-[12px] text-[9px] text-[#141414] placeholder:text-[#9ca3af];
+}
+
+.login-email-box {
+  @apply w-full h-[38px] border border-[#e5e7eb] rounded-[10px] bg-[#ffffff] flex items-center;
+}
+
+.login-email-input {
+  @apply w-full h-full border-none outline-none bg-transparent px-[12px] text-[9px] text-[#141414] placeholder:text-[#9ca3af];
+}
+
+.login-not-registered-row {
+  @apply flex items-center gap-[6px] mt-[5px] px-[2px];
+}
+
+.login-not-registered-text {
+  @apply text-[10px] font-medium text-[#dc2626] leading-tight;
+}
+
+.login-signup-mini-btn {
+  @apply w-fit bg-transparent text-[#2563eb] border-none p-0 text-[10px] font-semibold cursor-pointer underline hover:text-[#1d4ed8] shrink-0 leading-tight;
+}
+
+.login-privacy-note {
+  @apply mt-[8px] mb-[16px] text-[8px] leading-[1.45] text-[#525252];
+}
+
+.login-privacy-note strong {
+  @apply text-[#141414] font-bold;
+}
+
+.login-continue-wrap {
+  @apply flex justify-center mb-[16px];
+}
+
+.login-continue-btn {
+  @apply bg-[#e9e4da] text-[#ffffff] border-none rounded-full py-[9px] px-[26px] text-[9px] font-semibold cursor-pointer transition-colors duration-200;
+}
+
+.login-continue-btn.is-ready {
+  @apply bg-[#1a1a1a] text-[#ffffff];
+}
+
+.login-or-label {
+  @apply text-center text-[8.5px] font-medium text-[#374151] mb-[12px];
+}
+
+.login-social-row {
+  @apply flex items-center justify-center gap-[10px];
+}
+
+.login-social-btn {
+  @apply inline-flex items-center justify-center gap-[6px] bg-[#ffffff] border border-[#e5e7eb] rounded-full py-[6px] px-[15px] text-[9px] font-semibold text-[#141414] cursor-pointer transition-colors duration-150 hover:bg-[#f9fafb] hover:border-[#d1d5db];
+}
+
+.login-social-icon-apple {
+  @apply w-[11px] h-[13px] object-contain block;
+}
+
+.login-social-icon-google {
+  @apply w-[12px] h-[12px] object-contain block;
+}
+
+@media (max-width: 480px) {
+  .login-page-header {
+    @apply py-[14px] px-[16px];
+  }
+
+  .login-page-logo-img {
+    @apply h-[36px];
+  }
+
+  .login-page-main {
+    @apply px-[14px] pt-[24px] pb-[48px];
+  }
+
+  .login-page-wrapper {
+    @apply max-w-[325px];
+  }
+
+  .login-page-card {
+    @apply min-h-[420px];
+  }
+
+  .login-page-card-header {
+    @apply pt-[22px] px-[16px] pb-[18px];
+  }
+
+  .login-page-card-logo {
+    @apply h-[34px];
+  }
+
+  .login-page-card-body {
+    @apply pt-[24px] px-[18px] pb-[34px];
+  }
+
+  .login-page-title {
+    @apply text-[12px] mb-[14px];
+  }
+}

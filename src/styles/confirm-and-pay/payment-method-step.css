@@ -1,0 +1,81 @@
+@reference "../../app/globals.css";
+
+/* Step 2 - Add a Payment Method (Left Column) */
+
+.payment-step-wrapper {
+  @apply w-full flex flex-col gap-[16px];
+}
+
+.payment-option-card {
+  @apply w-full bg-[#ffffff] rounded-[16px] border border-[#e5e2da] p-[22px] flex items-start gap-[16px] transition-colors duration-150;
+}
+
+.payment-option-card:hover {
+  border-color: #141414;
+}
+
+.payment-option-icon {
+  @apply w-[40px] h-[40px] object-contain shrink-0 block mt-[2px];
+}
+
+.payment-option-content {
+  @apply flex-1 min-w-0 flex flex-col items-start;
+}
+
+.payment-option-title {
+  @apply m-0 mb-[8px] font-bold text-[#141414] text-[14px] leading-[1.35];
+}
+
+.payment-option-desc {
+  @apply m-0 text-[10.5px] text-[#525252] leading-[1.55];
+}
+
+.payment-option-desc-block {
+  @apply flex flex-col gap-[8px];
+}
+
+.payment-option-desc strong {
+  @apply font-bold text-[#141414];
+}
+
+.payment-action-btn {
+  @apply mt-[16px] inline-flex items-center justify-center gap-[6px] bg-[#1a1a1a] text-[#ffffff] border-none rounded-full py-[11px] px-[22px] text-[11px] font-semibold cursor-pointer transition-colors duration-200 hover:bg-[#000000] disabled:opacity-60 disabled:cursor-not-allowed;
+}
+
+.payment-razorpay-logo {
+  @apply h-[13px] w-auto object-contain inline-block;
+}
+
+.payment-feedback-error {
+  @apply m-0 mt-[10px] text-[10.5px] font-medium text-[#dc2626] bg-[#fef2f2] border border-[#fecaca] rounded-[10px] py-[8px] px-[12px] w-full;
+}
+
+.payment-terms-note {
+  @apply m-0 mt-[2px] text-[10px] text-[#525252] leading-[1.5];
+}
+
+.payment-terms-note strong {
+  @apply font-bold text-[#141414];
+}
+
+@media (max-width: 640px) {
+  .payment-option-card {
+    @apply p-[16px] gap-[12px] rounded-[14px];
+  }
+
+  .payment-option-icon {
+    @apply w-[34px] h-[34px];
+  }
+
+  .payment-option-title {
+    @apply text-[13px];
+  }
+
+  .payment-option-desc {
+    @apply text-[10px];
+  }
+
+  .payment-action-btn {
+    @apply w-full py-[10px] px-[16px] text-[10.5px];
+  }
+}

@@ -1,0 +1,42 @@
+@reference "../../app/globals.css";
+
+/* Property Highlights CSS */
+
+.property-highlights-section {
+  @apply w-full bg-[#ffffff] py-[28px];
+}
+
+.highlights-grid {
+  @apply grid grid-cols-3 gap-0;
+}
+
+.highlight-column {
+  @apply py-[4px] px-[24px] border-r border-[#ece8df] flex flex-col items-start first:pl-0 last:pr-0 last:border-r-0;
+}
+
+.highlight-icon-wrap {
+  @apply w-[32px] h-[32px] mb-[14px] flex items-center justify-start;
+}
+
+.highlight-img-icon {
+  @apply w-[30px] h-[30px] object-contain block;
+}
+
+.highlight-heading {
+  @apply font-sans text-[14px] font-semibold leading-[1.4] text-[#141414] mb-[8px] mt-0;
+}
+
+.highlight-description {
+  @apply font-sans text-[11.5px] leading-[1.55] text-[#525252] m-0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .highlights-grid {
+    @apply grid-cols-1 gap-[20px];
+  }
+
+  .highlight-column {
+    @apply pt-0 px-0 pb-[18px] border-r-0 border-b border-[#ece8df] last:pb-0 last:border-b-0;
+  }
+}

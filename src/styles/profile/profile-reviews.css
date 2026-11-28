@@ -1,0 +1,138 @@
+@reference "../../app/globals.css";
+
+/* Profile -> Reviews I've Written Page */
+
+.reviews-container {
+  @apply w-full;
+}
+
+.reviews-list {
+  @apply flex flex-col gap-[18px];
+}
+
+.review-card {
+  @apply w-full bg-[#ffffff] border border-[#ece8df] rounded-[20px] px-[24px] py-[20px] flex flex-col gap-[14px];
+}
+
+.review-card-top {
+  @apply flex items-start justify-between gap-[16px];
+}
+
+.review-property-row {
+  @apply flex items-center gap-[16px] min-w-0;
+}
+
+.review-image {
+  @apply w-[74px] h-[74px] rounded-[12px] object-cover shrink-0 block bg-[#f5f5f5];
+}
+
+.review-content {
+  @apply min-w-0 flex flex-col gap-[4px];
+}
+
+.review-property-name {
+  @apply m-0 text-[17px] font-bold text-[#141414] leading-[1.2];
+}
+
+.review-property-desc {
+  @apply m-0 text-[10.5px] font-normal text-[#374151] leading-[1.35];
+}
+
+.review-property-address {
+  @apply m-0 text-[10px] font-normal text-[#525252] leading-[1.35];
+}
+
+.review-property-address strong {
+  @apply font-bold text-[#141414];
+}
+
+.edit-review-button {
+  @apply inline-flex items-center justify-center bg-[#ffffff] text-[#141414] border border-[#141414] rounded-full py-[8px] px-[18px] text-[11px] font-medium cursor-pointer transition-colors duration-150 hover:bg-[#faf8f3] shrink-0 whitespace-nowrap;
+}
+
+.review-rating-stars {
+  @apply flex items-center gap-[6px];
+}
+
+.review-star-svg {
+  @apply w-[18px] h-[18px] block shrink-0;
+}
+
+.review-text {
+  @apply m-0 text-[11.5px] font-normal text-[#262626] leading-[1.5];
+}
+
+/* Inline Edit Form */
+.review-edit-form {
+  @apply flex flex-col gap-[12px] pt-[12px] border-t border-[#f0ece3];
+}
+
+.review-edit-stars-row {
+  @apply flex items-center gap-[6px];
+}
+
+.review-edit-star-btn {
+  @apply bg-transparent border-none p-0 cursor-pointer inline-flex items-center justify-center transition-transform duration-150 hover:scale-110;
+}
+
+.review-input {
+  @apply w-full min-h-[78px] bg-[#ffffff] border border-[#e5e2da] rounded-[12px] p-[12px] text-[11.5px] text-[#141414] outline-none resize-y focus:border-[#141414] transition-colors;
+}
+
+.review-input.is-error {
+  @apply border-[#dc2626];
+}
+
+.review-error-text {
+  @apply m-0 text-[10.5px] font-medium text-[#dc2626];
+}
+
+.review-actions {
+  @apply flex items-center gap-[10px] flex-wrap;
+}
+
+.review-save-btn {
+  @apply inline-flex items-center justify-center bg-[#1a1a1a] text-[#ffffff] border-none rounded-full py-[9px] px-[22px] text-[11px] font-medium cursor-pointer transition-colors hover:bg-[#000000] whitespace-nowrap;
+}
+
+.review-cancel-btn {
+  @apply inline-flex items-center justify-center bg-[#ffffff] text-[#141414] border border-[#e5e2da] rounded-full py-[9px] px-[20px] text-[11px] font-medium cursor-pointer transition-colors hover:border-[#141414] whitespace-nowrap;
+}
+
+.reviews-empty-state {
+  @apply w-full bg-[#faf8f3] border border-[#ece8df] rounded-[16px] p-[32px] text-center text-[13px] text-[#525252];
+}
+
+/* Tablet Responsive */
+@media (max-width: 960px) {
+  .review-card {
+    @apply px-[20px] py-[18px];
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 640px) {
+  .review-card {
+    @apply p-[16px] rounded-[16px] gap-[12px];
+  }
+
+  .review-card-top {
+    @apply flex-col items-stretch gap-[12px];
+  }
+
+  .review-property-row {
+    @apply items-start gap-[12px];
+  }
+
+  .review-image {
+    @apply w-[64px] h-[64px] rounded-[10px];
+  }
+
+  .edit-review-button {
+    @apply self-start py-[7px] px-[16px];
+  }
+
+  .review-actions {
+    @apply grid grid-cols-2;
+  }
+}

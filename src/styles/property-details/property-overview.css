@@ -1,0 +1,164 @@
+@reference "../../app/globals.css";
+
+/* Main Two-Column Layout Container */
+.property-main-two-column {
+  @apply grid gap-[48px] max-w-[1320px] mx-auto px-[16px] pb-[48px] bg-[#ffffff];
+  grid-template-columns: minmax(0, 1fr) 390px;
+}
+
+.property-left-column {
+  @apply min-w-0 flex flex-col;
+}
+
+.property-right-column {
+  @apply w-full;
+}
+
+@media (max-width: 1100px) {
+  .property-main-two-column {
+    @apply gap-[32px];
+    grid-template-columns: minmax(0, 1fr) 340px;
+  }
+}
+
+@media (max-width: 900px) {
+  .property-main-two-column {
+    @apply grid-cols-1 gap-[28px];
+  }
+
+  .property-right-column {
+    order: -1;
+  }
+}
+
+/* Property Overview CSS */
+
+.property-overview-section {
+  @apply w-full bg-[#ffffff] pb-[28px] border-b border-[#e5e7eb] scroll-mt-[24px];
+}
+
+/* A. Property Tags */
+.overview-tags-row {
+  @apply flex items-center flex-wrap gap-[10px] mb-[20px];
+}
+
+.overview-tags-list {
+  @apply flex items-center flex-wrap gap-[10px];
+}
+
+.property-tag-pill {
+  @apply inline-flex items-center justify-center h-[34px] px-[14px] bg-[#f4efe6] border-none rounded-full text-[#1a1a1a] whitespace-nowrap font-sans font-[500] not-italic leading-[150%] tracking-[-0.01em];
+  font-size: 11px;
+}
+
+.overview-share-btn {
+  @apply inline-flex items-center gap-[6px] bg-transparent border-none py-[8px] px-[12px] cursor-pointer text-[#171717] font-sans font-medium leading-[150%] tracking-[-0.01em] transition-opacity duration-200 hover:opacity-70;
+  font-size: 12px;
+}
+
+.share-svg-icon {
+  @apply w-[17px] h-[17px] object-contain inline-block;
+}
+
+/* B. Title & Rating */
+.overview-title-row {
+  @apply flex justify-between items-center flex-wrap gap-[16px] mb-[8px];
+}
+
+.overview-title {
+  @apply font-sans font-bold not-italic leading-[130%] tracking-[-0.03em] text-[#141414] m-0;
+  font-size: 32px;
+}
+
+.overview-rating-link {
+  @apply inline-flex items-center gap-[6px] font-sans font-semibold text-[#141414] border-b border-[#141414] pb-[4px];
+  font-size: 13px;
+}
+
+.overview-star {
+  @apply text-[#141414];
+  font-size: 12px;
+}
+
+.overview-rating-divider {
+  @apply text-[#141414] font-normal;
+}
+
+/* C. Rental Info, Specs & Description */
+.overview-meta-block {
+  @apply mb-[10px];
+}
+
+.overview-rental-location {
+  @apply font-sans font-[500] not-italic leading-[140%] tracking-[-0.02em] text-[#141414] mb-[2px];
+  font-size: 15px;
+}
+
+.overview-specs-row {
+  @apply flex items-center flex-wrap gap-[8px] font-sans font-[500] not-italic leading-[140%] tracking-[-0.02em] text-[#141414];
+  font-size: 15px;
+}
+
+.spec-bullet {
+  @apply text-[#4b5563];
+}
+
+.overview-description-block {
+  @apply font-sans font-[500] not-italic leading-[145%] tracking-[-0.02em] text-[#374151] flex flex-col gap-[5px];
+  font-size: 13px;
+}
+
+.overview-description-block p {
+  @apply m-0;
+}
+
+.overview-read-more-btn {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .overview-title {
+    font-size: 26px;
+    line-height: 130%;
+  }
+
+  .overview-rental-location,
+  .overview-specs-row {
+    font-size: 14px;
+  }
+
+  .property-tag-pill {
+    @apply h-auto min-h-[32px] py-[5px] px-[12px];
+    font-size: 11px;
+    white-space: normal;
+  }
+
+  .overview-description-block {
+    transition: all 0.3s ease;
+  }
+
+  .overview-description-block.is-collapsed p:not(:first-child) {
+    display: none;
+  }
+
+  .overview-description-block.is-collapsed p:first-child {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .overview-read-more-btn {
+    display: inline-block;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #141414;
+    padding: 0 0 2px 0;
+    font-family: var(--font-mona-sans), 'Mona Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #141414;
+    cursor: pointer;
+    margin-top: 8px;
+  }
+}

@@ -16,7 +16,7 @@ const COMPANY = [
 ];
 
 const POLICY = [
-  { label: "Terms of Service", href: "/terms-of-service" },
+  { label: "Terms of Service", href: "/terms-of-Service" },
   { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Payments Terms", href: "/payment-terms" },
   { label: "Cancellation / Refund Policy", href: "/cancellation-refund-policy" },

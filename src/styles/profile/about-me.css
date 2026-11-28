@@ -1,0 +1,234 @@
+@reference "../../app/globals.css";
+
+/* Profile -> About Me & Edit Account Styles */
+
+/* --- ProfileInfo (About Me View) --- */
+.about-profile-card {
+  @apply w-full bg-[#ffffff] border border-[#ece8df] rounded-[20px] px-[32px] py-[28px] flex items-center justify-between gap-[24px];
+}
+
+.about-profile-left {
+  @apply flex items-center gap-[22px] min-w-0;
+}
+
+.about-profile-image {
+  @apply w-[76px] h-[76px] rounded-full object-cover shrink-0 block bg-[#f5f1e8];
+}
+
+.about-profile-details {
+  @apply flex flex-col gap-[5px] min-w-0;
+}
+
+.about-profile-name {
+  @apply m-0 text-[17px] font-bold text-[#141414] leading-[1.25] tracking-[-0.01em];
+}
+
+.about-profile-email {
+  @apply m-0 text-[11.5px] font-normal text-[#374151] leading-[1.35] break-words;
+}
+
+.about-profile-meta-row {
+  @apply flex items-center flex-wrap gap-[10px] mt-[2px];
+}
+
+.about-profile-phone {
+  @apply text-[11.5px] font-normal text-[#6b7280] leading-[1.3] whitespace-nowrap;
+}
+
+.about-account-badge {
+  @apply inline-flex items-center justify-center bg-[#f5f1e8] text-[#141414] rounded-full px-[12px] py-[4px] text-[10.5px] font-medium leading-[1.2] whitespace-nowrap;
+}
+
+.about-profile-right {
+  @apply flex items-center gap-[22px] shrink-0;
+}
+
+.about-join-text {
+  @apply m-0 text-[12px] font-bold text-[#141414] whitespace-nowrap;
+}
+
+.about-edit-button {
+  @apply inline-flex items-center justify-center bg-[#1a1a1a] text-[#ffffff] border-none rounded-full py-[11px] px-[22px] text-[11px] font-medium cursor-pointer transition-colors duration-150 hover:bg-[#000000] whitespace-nowrap;
+}
+
+/* --- EditProfileForm (Edit Account View) --- */
+.edit-page-wrapper {
+  @apply relative w-full flex flex-col items-center;
+}
+
+.edit-header-row {
+  @apply absolute top-0 left-0 flex items-center gap-[10px];
+}
+
+.edit-back-button {
+  @apply inline-flex items-center justify-center w-[30px] h-[30px] p-0 bg-transparent border-none rounded-full text-[#141414] cursor-pointer transition-colors duration-150 hover:bg-[#f5f1e8];
+}
+
+.edit-heading {
+  @apply m-0 text-[15px] font-bold text-[#141414] leading-[1.25];
+}
+
+.edit-form-card {
+  @apply w-full max-w-[360px] bg-[#ffffff] border border-[#f0ece3] rounded-[20px] px-[24px] pt-[22px] pb-[24px];
+}
+
+.edit-photo-section {
+  @apply flex flex-col items-center mb-[14px];
+}
+
+.edit-avatar {
+  @apply w-[68px] h-[68px] rounded-full object-cover block bg-[#f5f1e8];
+}
+
+.edit-upload-photo-label {
+  @apply mt-[8px] text-[11px] font-medium text-[#141414] cursor-pointer transition-opacity duration-150 hover:opacity-70 hover:underline;
+}
+
+.edit-hidden-file-input {
+  display: none;
+}
+
+.edit-form-fields {
+  @apply flex flex-col gap-[11px];
+}
+
+.edit-form-group {
+  @apply flex flex-col;
+}
+
+.edit-form-label {
+  @apply text-[11px] font-medium text-[#141414] mb-[5px] leading-[1.3];
+}
+
+.edit-form-input {
+  @apply w-full h-[40px] px-[14px] bg-[#ffffff] border border-[#ece8df] rounded-[13px] text-[12px] text-[#141414] outline-none transition-colors duration-150 focus:border-[#141414];
+}
+
+.edit-form-input.is-error {
+  @apply border-[#dc2626];
+}
+
+.edit-phone-group {
+  @apply w-full h-[40px] flex items-center bg-[#ffffff] border border-[#ece8df] rounded-[13px] overflow-hidden transition-colors duration-150 focus-within:border-[#141414];
+}
+
+.edit-phone-group.is-error {
+  @apply border-[#dc2626];
+}
+
+.edit-country-code-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  flex-shrink: 0;
+}
+
+.edit-country-code-select {
+  height: 100%;
+  padding: 0 28px 0 14px;
+  background: transparent;
+  border: none;
+  font-size: 12px;
+  color: #141414;
+  outline: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.edit-country-code-chevron {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #141414;
+}
+
+.edit-phone-divider {
+  @apply w-[1px] h-[22px] bg-[#e5dfd2] shrink-0;
+}
+
+.edit-phone-input {
+  @apply flex-1 min-w-0 h-full px-[12px] bg-transparent border-none text-[12px] text-[#141414] outline-none;
+}
+
+.edit-helper-text {
+  @apply m-0 mt-[5px] text-[9.5px] text-[#6b7280] leading-[1.4];
+}
+
+.edit-error-text {
+  @apply m-0 mt-[4px] text-[10.5px] font-medium text-[#dc2626] leading-[1.3];
+}
+
+.edit-save-button-wrap {
+  @apply flex justify-center mt-[18px];
+}
+
+.edit-save-button {
+  @apply inline-flex items-center justify-center bg-[#1a1a1a] text-[#ffffff] border-none rounded-full py-[11px] px-[28px] text-[11px] font-medium cursor-pointer transition-colors duration-150 hover:bg-[#000000] whitespace-nowrap;
+}
+
+/* --- Tablet Responsive --- */
+@media (max-width: 1080px) {
+  .about-profile-card {
+    @apply px-[24px] py-[22px] gap-[18px] flex-wrap;
+  }
+
+  .about-profile-right {
+    @apply gap-[16px];
+  }
+
+  .edit-page-wrapper {
+    @apply items-stretch gap-[16px];
+  }
+
+  .edit-header-row {
+    position: static;
+  }
+
+  .edit-form-card {
+    @apply mx-auto;
+  }
+}
+
+/* --- Mobile Responsive --- */
+@media (max-width: 640px) {
+  .about-profile-card {
+    @apply flex-col items-stretch p-[18px] rounded-[16px] gap-[16px];
+  }
+
+  .about-profile-left {
+    @apply gap-[14px];
+  }
+
+  .about-profile-image {
+    @apply w-[64px] h-[64px];
+  }
+
+  .about-profile-name {
+    @apply text-[16px];
+  }
+
+  .about-profile-right {
+    @apply w-full justify-between pt-[14px] border-t border-[#f0ece3] gap-[12px] flex-wrap;
+  }
+
+  .about-edit-button {
+    @apply py-[10px] px-[20px];
+  }
+
+  .edit-form-card {
+    @apply max-w-full px-[18px] pt-[22px] pb-[26px] rounded-[16px];
+  }
+
+  .edit-avatar {
+    @apply w-[68px] h-[68px];
+  }
+
+  .edit-save-button {
+    @apply w-full py-[12px] px-[24px];
+  }
+}
