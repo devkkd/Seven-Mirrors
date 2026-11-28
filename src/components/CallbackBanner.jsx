@@ -1,8 +1,10 @@
 "use client";
-
+import { useState } from "react";
 import { PhoneCall } from "lucide-react";
+import RequestCallbackModal from "./RequestCallbackModal";
 
 export default function CallbackBanner({ onRequest }) {
+    const [open, setOpen] = useState(false);
   return (
     <section className="px-5 py-10 md:py-14">
       <div className="mx-auto flex max-w-[1280px] flex-col gap-6 rounded-[24px] bg-[#0f0f0f] px-6 py-7 md:flex-row md:items-center md:justify-between md:rounded-[32px] md:px-10 md:py-8">
@@ -19,7 +21,7 @@ export default function CallbackBanner({ onRequest }) {
         {/* button */}
         <button
           type="button"
-          onClick={onRequest}
+         onClick={() => setOpen(true)}
           className="group flex shrink-0 items-center justify-center gap-2.5 rounded-full bg-white px-8 py-4 font-mona text-[14px] font-medium text-black transition duration-300 hover:scale-105 hover:shadow-[0_8px_30px_rgba(255,255,255,0.25)] active:scale-95 md:px-10 md:py-[18px]"
         >
           <PhoneCall
@@ -28,6 +30,7 @@ export default function CallbackBanner({ onRequest }) {
           />
           Request Callback
         </button>
+         <RequestCallbackModal open={open} onClose={() => setOpen(false)} />
       </div>
     </section>
   );
