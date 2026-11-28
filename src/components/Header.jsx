@@ -13,7 +13,7 @@ const links = [
 ];
 
 const menuItems = [
-  { href: "/journal", title: "The Stay Journal", sub: "Travel Tips & Inspiration" },
+  { href: "/properties", title: "The Stay Journal", sub: "Travel Tips & Inspiration" },
   { href: "/contact-us", title: "Contact", sub: "We're Here to Help" },
   { href: "/login", title: "Log in or Sign up", sub: "Access Your Account" },
 ];

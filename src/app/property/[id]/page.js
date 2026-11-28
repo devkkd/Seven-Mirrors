@@ -12,59 +12,30 @@ import WhereYoullBe from "@/components/property-details/WhereYoullBe";
 import GuestAccess from "@/components/property-details/GuestAccess";
 import DiscoverPlaces from "@/components/property-details/DiscoverPlaces";
 import BookingCard from "@/components/property-details/BookingCard";
+import { getPropertyBySlug } from "@/lib/properties";
 
 export const instant = false;
 
+export async function generateMetadata({ params }) {
+  const resolvedParams = await params;
+  const id = resolvedParams?.id || resolvedParams?.slug || "";
+  const property = await getPropertyBySlug(id);
+
+  return {
+    title: property?.title
+      ? `${property.title} | Seven Mirror Stays`
+      : "Property Details | Seven Mirror Stays",
+    description:
+      property?.desc ||
+      property?.tagline ||
+      "Discover handpicked private stays across Jaipur and Gurugram by Seven Mirror Stays.",
+  };
+}
+
 async function PropertyContent({ paramsPromise }) {
-  const { id } = await paramsPromise;
-  let property = null;
-
-  try {
-    const backendUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
-    const res = await fetch(`${backendUrl}/api/properties/${id}`, {
-      cache: "no-store"
-    });
-
-    if (res.ok) {
-      const data = await res.json();
-      property = data.property || data.data || data;
-    }
-  } catch (error) {
-    // API not connected yet, fallback to default structure
-  }
-
-  if (!property) {
-    property = {
-      _id: id || "6745a1b2c3d4e5f67890abcd",
-      title: "Cozy Loft 201 | 2 BHK",
-      price: 6000,
-      rating: "4.73",
-      reviewsCount: 15,
-      propertyType: "Entire Flat",
-      location: {
-        type: "ENTIRE RENTAL UNIT",
-        area: "Malviya Nagar, Jaipur",
-        city: "Jaipur",
-        country: "India"
-      },
-      host: {
-        summary: "Hosted by Seven Mirror Stays | 7 Years Hosting"
-      },
-      specs: {
-        guests: 6,
-        bedrooms: 2,
-        beds: 2,
-        bathrooms: 2
-      },
-      images: [
-        { url: "/images/property/main-living.jpg", title: "Living Room with Red Arched Door" },
-        { url: "/images/property/bedroom.png", title: "Master Bedroom Suite" },
-        { url: "/images/property/dining-detail.png", title: "Dining Table & Tableware" },
-        { url: "/images/property/dining-hall.png", title: "Dining Hall & Lotus Wall Mural" },
-        { url: "/images/property/lounge.png", title: "Living Lounge with Striped Armchairs" }
-      ]
-    };
-  }
+  const resolvedParams = await paramsPromise;
+  const id = resolvedParams?.id || resolvedParams?.slug || "";
+  const property = await getPropertyBySlug(id);
 
   return (
     <main className="property-details-page-root bg-white min-h-screen" style={{ backgroundColor: "#ffffff" }}>
